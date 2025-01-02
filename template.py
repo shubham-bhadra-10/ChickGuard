@@ -1,5 +1,6 @@
 import os
-import pathlib import Path
+import pathlib
+from pathlib import Path
 import logging # logging module
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -32,8 +33,8 @@ for filepath in list_of_files:
 
 
     if filedir !="":
-        os.makedirs(filedir, exist_ok=True)
-        logging.info(f"Creating directory; {filedir} for the file: {filename}")
+        os.makedirs(filedir, exist_ok=True) # create directory if not exists
+        logging.info(f"Creating directory; {filedir} for the file: {filename}") # log the directory creation
 
     if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
